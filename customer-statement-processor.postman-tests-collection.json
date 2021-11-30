@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "120a558e-74f4-44b4-a4bc-ca98db49b396",
-		"name": "Rabobank Customer Statement Processor",
+		"name": "Customer Statement Processor",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
