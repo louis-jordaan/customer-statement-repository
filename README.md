@@ -11,11 +11,13 @@ There are 2 possible modes for the application to run:
   - REST API running on web container secured with JWT
   - Console application
 
-Maven wrapper is included in the repository. To compile the source, execute the following commands...
+Maven wrapper is included in the repository. To compile the source, execute the following commands in the root of the repository...
 
-**Windows:** mvnw clean install 
+**Windows:**  
+mvnw clean install 
 
-**Linux:** ./mvnw clean install 
+**Linux:**  
+./mvnw clean install 
 
 
 ## REST API / Web application
@@ -23,9 +25,20 @@ Maven wrapper is included in the repository. To compile the source, execute the 
 The application requires the **JWT_TEST_USER** and **JWT_TEST_PASSWORD** environment variables to be set in order to start up as a web application.
 You can start it any of the following commands (remember to replace the question marks with values)
   
-**Windows:** mvnw spring-boot:run -Dspring-boot.run.arguments="--JWT_TEST_USER=? --JWT_TEST_PASSWORD=?"
+**Windows:**  
+In the root of repository:  
+mvnw spring-boot:run -Dspring-boot.run.arguments="--JWT_TEST_USER=? --JWT_TEST_PASSWORD=?"  
 
-**Linux:** ./mvnw spring-boot:run -Dspring-boot.run.arguments="--JWT_TEST_USER=? --JWT_TEST_PASSWORD=?"
+In the 'target' directory after building/compiling the source code:  
+java -jar customer-statement-processor-1.0.0.jar --JWT_TEST_USER=? --JWT_TEST_PASSWORD=?  
+
+**Linux:**  
+In the root of repository:  
+./mvnw spring-boot:run -Dspring-boot.run.arguments="--JWT_TEST_USER=? --JWT_TEST_PASSWORD=?"  
+
+In the 'target' directory after building/compiling the source code:  
+java -jar customer-statement-processor-1.0.0.jar --JWT_TEST_USER=? --JWT_TEST_PASSWORD=?  
+
 
 ## Console application
 
@@ -33,9 +46,19 @@ To launch the application in console mode, you need to pass "-cm" or "--console-
 You then also, as a minimum, need to provide an input file that must be processed. The file must meet the same requirements as described in the Postman "Upload Statement" paragraph below. To specify an input file you must pass a "-i" or "--input-file" argument.
 Remember to replace the question marks with values.
 
-**Windows:** mvnw spring-boot:run -Dspring-boot.run.arguments="-cm -i ?"
+**Windows:**  
+In the root of repository:  
+mvnw spring-boot:run -Dspring-boot.run.arguments="-cm -i ?"  
 
-**Linux:** ./mvnw spring-boot:run -Dspring-boot.run.arguments="-cm -i ?"
+In the 'target' directory after building/compiling the source code:  
+java -jar customer-statement-processor-1.0.0.jar -cm -i "?"  
+
+**Linux:**  
+In the root of repository:  
+./mvnw spring-boot:run -Dspring-boot.run.arguments="-cm -i ?"  
+
+In the 'target' directory after building/compiling the source code:  
+java -jar customer-statement-processor-1.0.0.jar -cm -i "?"  
 
 Available arguments:
 Short Version | Long Version | Description
