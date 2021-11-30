@@ -54,12 +54,11 @@ Import the **customer-statement-processor.postman-tests-collection.json** (locat
 
 ## Miscellaneous
 
-Spring actuator health check URL: http://localhost:8080/actuator/health
+**Spring actuator** health check URL: http://localhost:8080/actuator/health
+**Swagger docs URL**: 
 
 
-
-
-### Note:
+## Note
 Java version used during development and testing: 
   - openjdk version "11.0.5" 2019-10-15 LTS
   - OpenJDK Runtime Environment 18.9 (build 11.0.5+10-LTS)
