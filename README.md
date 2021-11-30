@@ -30,7 +30,7 @@ PROC_VAL_STORAGE_DIR | /tmp | Directory where the application will save files th
 JWT_AUTH_ISSUER | Customer Statement Processor | The issuer of the JWT token.
 JWT_AUTH_SECRET | Refer to the application.yml configuration file in the source resources | Value of the key that must be used to sign issued JWT tokes.
 JWT_AUTH_AUDIENCE | Jordaan | The audience for the JWT token.
-JWT_AUTH_TTL_SECS | 600 | How long (in seconds) an issued JWT ticket will be valid before it expires.
+JWT_AUTH_TTL_SECS | 600 | How long (in seconds) an issued JWT token will be valid before it expires.
 JWT_TEST_USER |  | The username for the test user ***The application currently uses an in-memory user details service for authentication. Please change this to user your own user details service**
 JWT_TEST_PASSWORD | | The password for the test user ***The application currently uses an in-memory user details service for authentication. Please change this to user your own user details service**
 ENABLE_WEB_INTERACTIONS_LOGGING | true | Flag to indicate whether requests to and responses from the REST API should be logged (for auditing or debugging purposes).
