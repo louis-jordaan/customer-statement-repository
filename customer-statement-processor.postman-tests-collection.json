@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "120a558e-74f4-44b4-a4bc-ca98db49b396",
+		"name": "Rabobank Customer Statement Processor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest-api/v1/customer-statement/processing/validation-jobs/:executionId/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest-api",
+						"v1",
+						"customer-statement",
+						"processing",
+						"validation-jobs",
+						":executionId",
+						"status"
+					],
+					"variable": [
+						{
+							"key": "executionId",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest-api/v1/customer-statement/processing/validation-jobs/:executionId/details",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest-api",
+						"v1",
+						"customer-statement",
+						"processing",
+						"validation-jobs",
+						":executionId",
+						"details"
+					],
+					"variable": [
+						{
+							"key": "executionId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Download Results",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rest-api/v1/customer-statement/processing/validation-jobs/:executionId/results",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest-api",
+						"v1",
+						"customer-statement",
+						"processing",
+						"validation-jobs",
+						":executionId",
+						"results"
+					],
+					"variable": [
+						{
+							"key": "executionId",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Statement",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/rest-api/v1/customer-statement/processing/validation-jobs/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest-api",
+						"v1",
+						"customer-statement",
+						"processing",
+						"validation-jobs",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/rest-api/v1/authentication/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rest-api",
+						"v1",
+						"authentication",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIxZTEzYzc2Mi1kYWU5LTQ1MzMtODkzOS01ZmJiMDA0ZTQ3NDQiLCJzdWIiOiJhZG1pbiIsImlzcyI6IlJhYm9iYW5rIEN1c3RvbWVyIFN0YXRlbWVudCBQcm9jZXNzb3IiLCJhdWQiOiJSYWJvYmFuayIsImlhdCI6MTYzODI4NTUxNywiZXhwIjoxNjM4Mjg2MTE3fQ.-VM82-8QuDcZrQ_hevwUeGD2vig2uCx7GHHLLh3zKhf1qEOPfHLyguslDHL228bHXeS3SJqUcYfCwTGy14--TA",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
