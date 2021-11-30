@@ -12,22 +12,38 @@ There are 2 possible modes for the application to run:
   - Console application
 
 Maven wrapper is included in the repository. To compile the source, execute the following commands...
-  Windows: 
-  - mvnw clean install
-  Linux: 
-  - ./mvnw clean install
+
+**Windows:** mvnw clean install 
+
+**Linux:** ./mvnw clean install 
+
 
 ## REST API / Web application
 
-The application requries the **JWT_TEST_USER** and **JWT_TEST_PASSWORD** environment variables to be set in order to start up as a web application.
-You can start it any of the following commands (remember to replace the question marks with values):
-  Windows: 
-  - mvnw spring-boot:run -Dspring-boot.run.arguments="--JWT_TEST_USER=? --JWT_TEST_PASSWORD=?"
+The application requires the **JWT_TEST_USER** and **JWT_TEST_PASSWORD** environment variables to be set in order to start up as a web application.
+You can start it any of the following commands (remember to replace the question marks with values)
+  
+**Windows:** mvnw spring-boot:run -Dspring-boot.run.arguments="--JWT_TEST_USER=? --JWT_TEST_PASSWORD=?"
 
-  Linux:
-   - ./mvnw spring-boot:run -Dspring-boot.run.arguments="--JWT_TEST_USER=? --JWT_TEST_PASSWORD=?"
+**Linux:** ./mvnw spring-boot:run -Dspring-boot.run.arguments="--JWT_TEST_USER=? --JWT_TEST_PASSWORD=?"
 
 ## Console application
+
+To launch the application in console mode, you need to pass "-cm" or "--console-mode" as an argument.
+You then also, as a minimum, need to provide an input file that must be processed. The file must meet the same requirements as described in the Postman "Upload Statement" paragraph below. To specify an input file you must pass a "-i" or "--input-file" argument.
+
+**Windows:** mvnw spring-boot:run -Dspring-boot.run.arguments="-cm -i ?"
+
+**Linux:** ./mvnw spring-boot:run -Dspring-boot.run.arguments="-cm -i ?"
+
+Available arguments:
+Short Version | Long Version | Description
+--- | --- | ---
+-cm | --console-mode | Start application in console mode.
+-i | --input-file | Path to the input file.
+-o | --output-file | Path for the output file, the results will be written to this file.
+-a | --async | The application will process the input file asynchronously when this flag is passed.
+
 
 ## Environment variables
 Name | Default Value | Description
@@ -39,8 +55,8 @@ JWT_AUTH_ISSUER | Customer Statement Processor | The issuer of the JWT token.
 JWT_AUTH_SECRET | Refer to the application.yml configuration file in the source resources | Value of the key that must be used to sign issued JWT tokes.
 JWT_AUTH_AUDIENCE | Jordaan | The audience for the JWT token.
 JWT_AUTH_TTL_SECS | 600 | How long (in seconds) an issued JWT token will be valid before it expires.
-JWT_TEST_USER |  | The username for the test user ***The application currently uses an in-memory user details service for authentication. Please change this to user your own user details service**
-JWT_TEST_PASSWORD | | The password for the test user ***The application currently uses an in-memory user details service for authentication. Please change this to user your own user details service**
+JWT_TEST_USER | admin | The username for the test user ***The application currently uses an in-memory user details service for authentication. Please change this to user your own user details service**
+JWT_TEST_PASSWORD | 5ZKMoY4XM | The password for the test user ***The application currently uses an in-memory user details service for authentication. Please change this to user your own user details service**
 ENABLE_WEB_INTERACTIONS_LOGGING | true | Flag to indicate whether requests to and responses from the REST API should be logged (for auditing or debugging purposes).
 
 ## Postman 
@@ -55,7 +71,8 @@ Import the **customer-statement-processor.postman-tests-collection.json** (locat
 ## Miscellaneous
 
 **Spring actuator** health check URL: http://localhost:8080/actuator/health
-**Swagger docs URL**: 
+**Swagger docs URL**: http://localhost:8080/swagger-ui.html
+**OpenAPI description**: http://localhost:8080/v3/api-docs
 
 
 ## Note
