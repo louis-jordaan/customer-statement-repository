@@ -29,7 +29,7 @@ public class StatementBatchProcessingServiceIntegrationTestCase extends BaseInte
         Long executionId =
                 processingService.processStatement(Path.of(getClass().getClassLoader().getResource("records.xml").toURI()), outputFile, false);
 
-        Assertions.assertEquals(0, (long) executionId);
+        Assertions.assertTrue(executionId >= 0);
         Assertions.assertTrue(Files.exists(outputFile));
     }
 
