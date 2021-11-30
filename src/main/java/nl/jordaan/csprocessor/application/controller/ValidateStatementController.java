@@ -10,6 +10,7 @@ import nl.jordaan.csprocessor.objectmodel.dto.GetExecutionDetailsResponse;
 import nl.jordaan.csprocessor.objectmodel.dto.GetExecutionStatusResponse;
 import nl.jordaan.csprocessor.objectmodel.dto.UploadStatementResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -24,6 +25,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Optional;
 
+@ConditionalOnWebApplication
 @RestController
 @RequestMapping("/rest-api/v1/customer-statement/processing/validation-jobs")
 public class ValidateStatementController {

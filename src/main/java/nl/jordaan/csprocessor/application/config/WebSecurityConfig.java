@@ -4,6 +4,8 @@ import nl.jordaan.csprocessor.application.security.JwtAuthenticationFilter;
 import nl.jordaan.csprocessor.objectmodel.constant.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnNotWebApplication;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -18,6 +20,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import javax.servlet.http.HttpServletResponse;
 
 @EnableWebSecurity
+@ConditionalOnWebApplication
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -51,7 +54,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 )
                 .and()
                 .authorizeRequests()
-                .antMatchers("/rest-api/v1/authentication/**", "/authenticate", "/actuator/**").permitAll()
+                .antMatchers("/rest-api/v1/authentication/**", "/authenticate", "/actuator/**", "/v3/api-docs/**", "/swagger-resources/**", "/swagger-ui.html", "/swagger-ui/index.html", "/webjars/**", "/swagger-ui/**").permitAll()
                 .anyRequest().authenticated();
 
         // Add a filter to validate the tokens with every request

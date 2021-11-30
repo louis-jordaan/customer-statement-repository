@@ -1,6 +1,7 @@
 package nl.jordaan.csprocessor.application.error;
 
 import nl.jordaan.csprocessor.objectmodel.exception.StatementProcessingApiException;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+@ConditionalOnWebApplication
 @RestControllerAdvice
 public class RestErrorHandler extends ResponseEntityExceptionHandler {
 

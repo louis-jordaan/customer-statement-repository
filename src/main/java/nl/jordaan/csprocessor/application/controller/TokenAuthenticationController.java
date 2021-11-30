@@ -6,6 +6,7 @@ import nl.jordaan.csprocessor.objectmodel.exception.StatementProcessingApiExcept
 import nl.jordaan.csprocessor.objectmodel.constant.Constants;
 import nl.jordaan.csprocessor.objectmodel.dto.LoginRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
+@ConditionalOnWebApplication
 @RestController
 @RequestMapping("/rest-api/v1/authentication/")
 public class TokenAuthenticationController {
