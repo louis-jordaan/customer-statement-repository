@@ -31,6 +31,7 @@ You can start it any of the following commands (remember to replace the question
 
 To launch the application in console mode, you need to pass "-cm" or "--console-mode" as an argument.
 You then also, as a minimum, need to provide an input file that must be processed. The file must meet the same requirements as described in the Postman "Upload Statement" paragraph below. To specify an input file you must pass a "-i" or "--input-file" argument.
+Remember to replace the question marks with values.
 
 **Windows:** mvnw spring-boot:run -Dspring-boot.run.arguments="-cm -i ?"
 
